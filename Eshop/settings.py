@@ -138,7 +138,7 @@ STATICFILES_DIRS = [
 ]
 
 # This is the folder that will be used in production (Vercel)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')  # ✅ Output directory for collectstatic
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')  # ✅ Output directory for collectstatic
 
 
 # import os
