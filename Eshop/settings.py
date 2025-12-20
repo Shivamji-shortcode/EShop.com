@@ -16,11 +16,13 @@ from pathlib import Path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '^_g%33qd(g8bjc+*40&uh(ptgkb$&-*+0!i3$lu7xj1u166cbb'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -53,6 +55,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Eshop.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -68,6 +71,7 @@ TEMPLATES = [
                 'store.context_processors.logo_renderer',
                 'store.context_processors.category_renderer',
             ],
+
         },
     },
 ]
@@ -88,6 +92,7 @@ DATABASES = {
 from django.contrib.messages import constants as messages
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -127,14 +132,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Include all your static folders for local development
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'assets'),
 ]
 
 # This is the folder that will be used in production (Vercel)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')  # ✅ Output directory for collectstatic
+
+
+# import os
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'assets') # Or wherever your 'products' folder lives
