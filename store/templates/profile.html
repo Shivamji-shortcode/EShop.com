@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="/assets/admin/css/profilepage.css">
+
+<div class="container py-5">
+  <div class="card profile-card">
+    <div class="profile-header-gradient"></div>
+    
+    <div class="card-body p-5">
+      <h2 class="text-center profile-title">Account Settings</h2>
+      
+      <form method="POST">
+        {% csrf_token %}
+        <div class="row g-4">
+          <div class="col-md-6">
+            <label class="form-label">First Name</label>
+            <input type="text" name="first_name" class="form-control" value="{{ customer.first_name }}" placeholder="Enter first name">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Last Name</label>
+            <input type="text" name="last_name" class="form-control" value="{{ customer.last_name }}" placeholder="Enter last name">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Phone Number</label>
+            <input type="text" name="phone" class="form-control" value="{{ customer.phone }}" placeholder="Your phone number">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" value="{{ customer.email }}" disabled>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">House No.</label>
+            <input type="text" name="house_no" class="form-control" value="{{ customer.house_no }}">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Village</label>
+            <input type="text" name="village" class="form-control" value="{{ customer.village }}">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">City</label>
+            <input type="text" name="city" class="form-control" value="{{ customer.city }}">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">District</label>
+            <input type="text" name="district" class="form-control" value="{{ customer.district }}">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">State</label>
+            <input type="text" name="state" class="form-control" value="{{ customer.state }}">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Pincode</label>
+            <input type="text" name="pincode" class="form-control" value="{{ customer.pincode }}">
+          </div>
+        </div>
+
+        <div class="mt-5 text-center">
+          <button type="submit" class="btn btn-modern-update shadow-sm">
+            Save Profile Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/admin/js/profilepage.js"></script>
+{% endblock %}

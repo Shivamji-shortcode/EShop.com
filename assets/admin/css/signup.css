@@ -1,0 +1,132 @@
+/* Consolidated Signup Page Styles */
+
+/* 1. Wrapper: Centers the card and removes the gap from the Navbar */
+.signup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers the card in the viewport */
+    min-height: calc(100vh - 75px); /* Offset for your 75px navbar */
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 0 !important;
+}
+
+/* 2. Main Signup Card - Tightened top padding */
+.signup-card {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
+    padding: 15px 40px 30px 40px; /* Top padding reduced to 15px to kill the gap */
+    border: 1px solid #eee;
+}
+
+/* 3. Logo Area: Extreme tight gap fix */
+.brand-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 0 !important;
+    margin-bottom: 0px !important; /* Zeroed to pull heading up */
+}
+
+.brand-logo img {
+    height: 110px; /* Your requested height */
+    object-fit: contain;
+    display: block; 
+}
+
+/* 4. Typography: Heading and Subtitle Spacing */
+.signup-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #2C3E50;
+    margin-top: -10px !important; /* Negative margin to snap it to the logo */
+    margin-bottom: 5px;
+}
+
+.signup-card p {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* 5. Form Fields and Labels */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.signup-card label {
+    font-weight: 500;
+    color: #444;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.signup-card input.form-control {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 11px 15px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fdfdfd;
+    transition: all 0.2s ease;
+}
+
+.signup-card input.form-control:focus {
+    border-color: #2D9CDB;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(45, 156, 219, 0.1);
+}
+
+/* 6. Button: Preserving Your Original Gradient & Styling */
+.signup-card button {
+    width: 100%;
+    background: linear-gradient(to right, #2D9CDB, #F2994A);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(45, 156, 219, 0.2);
+    margin-top: 10px;
+}
+
+.signup-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(45, 156, 219, 0.3);
+}
+
+/* 7. Error States and Footer Links */
+small.error {
+    color: #dc3545;
+    font-size: 0.8em;
+    margin-top: 4px;
+    display: block;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-text a {
+    color: #2D9CDB;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}

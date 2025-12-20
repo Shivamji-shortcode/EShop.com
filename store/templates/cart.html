@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load cart %}
+{% load custom_filter %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+   <div class="border rounded p-4 m-4 shadow-sm bg-white">
+        <p class="display-4 pl-4 ml-4 text-primary fw-bold">Your Cart</p>
+        <hr>
+        {% if products %}
+        <table class="table align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>
+                        <img class="cart-product-img rounded-circle shadow-sm border" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </td>
+                    <td class="fw-semibold">{{ product.name }}</td>
+                    <td>{{ product.price|currency }}</td>
+                    <td>{{ product|cart_quantity:request.session.cart }}</td>
+                    <td>{{ product|price_total:request.session.cart|currency }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr class="table-light">
+                    <th colspan="4"></th>
+                    <th class="text-end">Total</th>
+                    <th class="text-success fw-bold">
+                        {{ products|total_cart_price:request.session.cart|currency }}
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+        <hr>
+
+        <div class="m-3 p-3 text-end">
+            <a href="{% url 'checkout' %}" class="btn btn-success btn-lg px-4 shadow-sm rounded-pill">
+                <i class="bi bi-credit-card me-2"></i> Proceed to Checkout
+            </a>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <h4 class="text-muted">🛒 Your cart is empty</h4>
+            <a href="{% url 'store' %}" class="btn btn-outline-primary mt-3">Continue Shopping</a>
+        </div>
+        {% endif %}
+   </div>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+{% endblock %}

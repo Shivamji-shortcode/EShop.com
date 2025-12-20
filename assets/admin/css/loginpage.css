@@ -1,0 +1,129 @@
+/* 1. Wrapper: Centers card and fixes Navbar Gap */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers the card */
+    min-height: calc(100vh - 75px); /* Offsets for your 75px navbar */
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 0 !important;
+}
+
+/* 2. Login Card: Tightened top padding */
+.login-card {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    padding: 15px 45px 35px 45px; /* Reduced top padding to 15px */
+    border: 1px solid #eee;
+}
+
+/* 3. Brand Logo: Tightened gap */
+.brand-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 0 !important;
+    margin-bottom: 0px !important; /* Zeroed to bring heading up */
+}
+
+.brand-logo img {
+    height: 110px; /* Kept your requested height */
+    object-fit: contain;
+    display: block;
+}
+
+/* 4. Typography: Removed internal gaps */
+.login-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #2C3E50;
+    margin-top: -10px !important; /* Negative margin snaps heading to logo */
+    margin-bottom: 5px;
+}
+
+.login-card p {
+    text-align: center;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* 5. Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.login-card label {
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.login-card input.form-control {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 11px 15px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fdfdfd;
+    transition: all 0.2s ease;
+}
+
+.login-card input.form-control:focus {
+    border-color: #2D9CDB;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(45, 156, 219, 0.1);
+}
+
+/* 6. Button: Your Original Gradient & Styling */
+.login-card button {
+    width: 100%;
+    background: linear-gradient(to right, #2D9CDB, #F2994A);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* 7. Error & Footer */
+small.error {
+    color: #dc3545;
+    font-size: 0.8em;
+    margin-top: 4px;
+    display: block;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-text a {
+    color: #2D9CDB;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'admin/css/signup.css' %}">
+
+<div class="signup-wrapper">
+  <div class="signup-card">
+    <div class="brand-logo">
+      <a href="{% url 'homepage' %}">
+        {% if logo_data.logo %}
+          <img src="{{ logo_data.logo.url }}" alt="Logo">
+        {% else %}
+          <span class="logo-text">E-Shop</span>
+        {% endif %}
+      </a>
+    </div>
+
+    <h2>Create Your Account</h2>
+    <p class="subtitle">Join us and start your shopping journey</p>
+
+    <form action="{% url 'signup' %}" method="POST" id="signupForm" class="modern-form">
+      {% csrf_token %}
+      {% if error %}
+        <div class="alert alert-danger-modern">{{ error }}</div>
+      {% endif %}
+
+      <div class="form-row">
+        <div class="form-group col-md-6 px-1">
+          <label><i class="bi bi-person"></i> First Name</label>
+          <input type="text" name="firstname" class="form-control" value="{{ values.first_name }}" placeholder="John" required>
+        </div>
+        <div class="form-group col-md-6 px-1">
+          <label>Last Name</label>
+          <input type="text" name="lastname" class="form-control" value="{{ values.last_name }}" placeholder="Doe" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label><i class="bi bi-phone"></i> Phone Number</label>
+        <input type="text" name="phone" class="form-control" value="{{ values.phone }}" placeholder="9876543210" required>
+        <small class="error-msg" id="phoneError"></small>
+      </div>
+
+      <div class="form-group">
+        <label><i class="bi bi-envelope"></i> Email Address</label>
+        <input type="email" name="email" id="email" value="{{ values.email }}" class="form-control" placeholder="example@gmail.com" required>
+        <small class="error-msg" id="emailError"></small>
+      </div>
+
+      <div class="form-group">
+        <label><i class="bi bi-lock"></i> Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="********" required>
+        <small class="error-msg" id="passwordError"></small>
+      </div>
+
+      <button type="submit" class="btn-signup-modern">Create Account</button>
+
+      <div class="footer-text">
+        Already have an account? <a href="{% url 'login' %}">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="{% static 'admin/js/signup.js' %}"></script>
+{% endblock %}
