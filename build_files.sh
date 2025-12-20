@@ -1,7 +1,12 @@
 #!/bin/bash
+
 echo "Build Start"
 
-python -m pip install -r requirements.txt
-python manage.py collectstatic --noinput --clear
+# Use Python from Vercel runtime
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 
-echo "Build end"
+# Clear and collect all static files to STATIC_ROOT
+python3 manage.py collectstatic --noinput --clear
+
+echo "Build End"

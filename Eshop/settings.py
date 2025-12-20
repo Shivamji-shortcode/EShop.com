@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -68,7 +68,6 @@ TEMPLATES = [
                 'store.context_processors.logo_renderer',
                 'store.context_processors.category_renderer',
             ],
-
         },
     },
 ]
@@ -125,19 +124,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 STATIC_URL = '/static/'
+
+# Include all your static folders for local development
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'assets'),
 ]
 
-# This is a 'holding' folder for production. 
-# Keep it separate from your 'assets' folder!
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles','staticfiles_build', 'static')
-
-# import os
+# This is the folder that will be used in production (Vercel)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'staticfiles_build', 'static')
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'assets') # Or wherever your 'products' folder lives
@@ -146,10 +143,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles','staticfiles_build', 'static'
 # ]
 # STATIC_ROOT = os.path.join (BASE_DIR,'assets')
 
+
 # ========================
 # Razorpay Configuration
 # ========================
 # ✅ Razorpay Test Keys (keep these safe)
 RAZORPAY_KEY_ID = "rzp_test_RPmOoIlpQ9XAC0"
 RAZORPAY_KEY_SECRET = "N0TPZTTZh1mz5RVM7VhGddpy"
-
