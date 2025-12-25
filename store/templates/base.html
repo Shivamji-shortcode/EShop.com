@@ -113,9 +113,27 @@
       {% block content %}{% endblock %}
     </main>
 
-    <footer class="text-center py-4 border-top mt-5 bg-light">
+    <div class="footer-col">
+    <h4 style="color: #2C3E50; font-weight: 700; margin-bottom: 20px;">Support & Legal</h4>
+    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+        <li style="margin-bottom: 10px;">
+            <a href="{% url 'privacy_policy' %}" style="color: #7f8c8d; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#2D9CDB'" onmouseout="this.style.color='#7f8c8d'">Privacy Policy</a>
+        </li>
+        <li style="margin-bottom: 10px;">
+            <a href="{% url 'terms_conditions' %}" style="color: #7f8c8d; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#2D9CDB'" onmouseout="this.style.color='#7f8c8d'">Terms & Conditions</a>
+        </li>
+        <li style="margin-bottom: 10px;">
+            <a href="{% url 'shipping_policy' %}" style="color: #7f8c8d; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#2D9CDB'" onmouseout="this.style.color='#7f8c8d'">Shipping Policy</a>
+        </li>
+        <li style="margin-bottom: 10px;">
+            <a href="{% url 'refund_policy' %}" style="color: #7f8c8d; text-decoration: none; transition: 0.2s;" onmouseover="this.style.color='#2D9CDB'" onmouseout="this.style.color='#7f8c8d'">Refund Policy</a>
+        </li>
+    </ul>
+    
+    <div style="color: #95a5a6; font-size: 0.85rem; border-top: 1px solid #eee; pt-3; margin-top: 15px; padding-top: 15px;">
         &copy; {% now 'Y' %} EShop. All rights reserved.
-    </footer>
+    </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
