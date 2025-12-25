@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/policy.css' %}">
+
+<div class="policy-wrapper">
+    <div class="policy-card">
+        <header class="policy-header">
+            <h1>Privacy Policy</h1>
+            <span class="update-date">Last Updated: December 2025</span>
+        </header>
+
+        <div class="policy-body">
+            <section class="policy-section">
+                <h3>1. Overview</h3>
+                <p>Welcome to <strong>EShop</strong>. We are dedicated to protecting your personal information. This Privacy Policy describes how we handle the data you provide while interacting with our e-commerce prototype.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>2. Information We Collect</h3>
+                <p>For the purpose of this prototype, we collect limited information, including:</p>
+                <ul>
+                    <li>Personal identifiers (Name, Email Address).</li>
+                    <li>Account credentials (encrypted passwords).</li>
+                    <li>Session data (how you navigate the site).</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h3>3. Use of Information</h3>
+                <p>The data collected is used solely to demonstrate the functionality of the platform, such as maintaining your login state and simulating the checkout process.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>4. Data Protection</h3>
+                <p>While we use standard security protocols, this is a development environment. We advise users not to share highly sensitive personal information or reuse critical passwords.</p>
+            </section>
+        </div>
+
+        <div class="policy-footer">
+            <a href="{% url 'homepage' %}" class="btn-grad-back">Return to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

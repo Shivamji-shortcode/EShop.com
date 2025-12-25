@@ -1,0 +1,94 @@
+/* EShop Policy Pages Styling */
+
+.policy-wrapper {
+    background-color: #f4f7f9;
+    padding: 100px 20px;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.policy-card {
+    background: #ffffff;
+    max-width: 800px;
+    width: 100%;
+    padding: 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.policy-header {
+    border-bottom: 2px solid #f1f1f1;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.policy-card h1 {
+    font-size: 2.8rem;
+    color: #2C3E50;
+    margin: 0;
+}
+
+.update-date {
+    color: #95a5a6;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    display: block;
+}
+
+.policy-section {
+    margin-bottom: 35px;
+}
+
+.policy-section h3 {
+    color: #2D9CDB; /* Brand Blue */
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.policy-section p, 
+.policy-section li {
+    color: #5D6D7E;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.policy-section ul {
+    padding-left: 20px;
+}
+
+.policy-footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Signature Gradient Button */
+.btn-grad-back {
+    display: inline-block;
+    padding: 14px 40px;
+    background: linear-gradient(to right, #2D9CDB, #F2994A);
+    color: white !important;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(45, 156, 219, 0.3);
+}
+
+.btn-grad-back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(45, 156, 219, 0.4);
+    opacity: 0.95;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .policy-card {
+        padding: 30px;
+    }
+    .policy-card h1 {
+        font-size: 2rem;
+    }
+}
