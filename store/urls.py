@@ -26,8 +26,8 @@ urlpatterns = [
     path('create-order', create_order, name='create_order'),
     path('verify-payment', verify_payment, name='verify_payment'),
     path('privacy-policy/', policies.privacy_policy, name='privacy_policy'),
-    # path('terms-conditions/', policies.terms_conditions, name='terms_conditions'),
-    # path('shipping-policy/', policies.shipping_policy, name='shipping_policy'),
-    # path('refund-policy/', policies.refund_policy, name='refund_policy'),
+    path('terms-conditions/', policies.terms_conditions, name='terms_conditions'),
+    path('shipping-policy/', policies.shipping_policy, name='shipping_policy'),
+    path('refund-policy/', policies.refund_policy, name='refund_policy'),
 ]
         

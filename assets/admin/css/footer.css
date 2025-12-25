@@ -1,0 +1,77 @@
+/* EShop Main Footer Styles */
+
+.main-footer {
+    background-color: #ffffff;
+    border-top: 1px solid #eaeaea;
+    padding: 60px 0 30px 0;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to bottom if content is short */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start; /* Keeps your links on the left as per your design */
+}
+
+.footer-col {
+    min-width: 250px;
+}
+
+.footer-heading {
+    color: #2C3E50;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #7f8c8d;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Hover effect using your Brand Blue */
+.footer-links a:hover {
+    color: #2D9CDB;
+    transform: translateX(5px); /* Subtle slide effect */
+}
+
+.footer-copyright {
+    color: #95a5a6;
+    font-size: 0.85rem;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+/* Responsive Tweak */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 40px 0 20px 0;
+    }
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-links a:hover {
+        transform: none; /* Disable slide on mobile */
+    }
+}
