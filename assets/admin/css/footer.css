@@ -1,77 +1,73 @@
-/* EShop Main Footer Styles */
+/* FORCE DARK AESTHETIC & TIGHT CENTERED LAYOUT */
 
-.main-footer {
-    background-color: #ffffff;
-    border-top: 1px solid #eaeaea;
-    padding: 60px 0 30px 0;
-    width: 100%;
-    margin-top: auto; /* Pushes footer to bottom if content is short */
+body footer.aesthetic-footer {
+    background-color: #121212 !important;
+    padding: 60px 0 !important;
+    width: 100% !important;
+    margin-top: 100px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: flex-start; /* Keeps your links on the left as per your design */
+footer.aesthetic-footer .footer-container {
+    /* This is the secret: keep the container small */
+    max-width: 600px !important; 
+    width: auto !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
 
-.footer-col {
-    min-width: 250px;
+footer.aesthetic-footer .footer-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    /* Reduced gap to bring names closer together */
+    gap: 30px !important; 
+    margin-bottom: 25px !important;
+    /* Removed width: 100% so it doesn't stretch */
+    width: auto !important; 
+    padding: 0 !important;
 }
 
-.footer-heading {
-    color: #2C3E50;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 25px;
+footer.aesthetic-footer .footer-nav a {
+    color: #777 !important;
+    text-decoration: none !important;
+    font-size: 0.8rem !important; /* Slightly smaller for elegance */
+    font-weight: 600 !important;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 25px 0;
+footer.aesthetic-footer .footer-nav a:hover {
+    color: #2D9CDB !important;
 }
 
-.footer-links li {
-    margin-bottom: 12px;
+footer.aesthetic-footer .footer-line {
+    width: 50px !important; /* Shorter, cleaner line */
+    height: 2px !important;
+    background: linear-gradient(to right, #2D9CDB, #F2994A) !important;
+    margin-bottom: 20px !important;
+    border-radius: 10px;
 }
 
-.footer-links a {
-    color: #7f8c8d;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-    display: inline-block;
+footer.aesthetic-footer .footer-copyright {
+    color: #444 !important;
+    font-size: 0.75rem !important;
 }
 
-/* Hover effect using your Brand Blue */
-.footer-links a:hover {
-    color: #2D9CDB;
-    transform: translateX(5px); /* Subtle slide effect */
-}
-
-.footer-copyright {
-    color: #95a5a6;
-    font-size: 0.85rem;
-    border-top: 1px solid #f1f1f1;
-    padding-top: 20px;
-    margin-top: 20px;
-    font-weight: 400;
-}
-
-/* Responsive Tweak */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .main-footer {
-        padding: 40px 0 20px 0;
+    footer.aesthetic-footer .footer-nav {
+        gap: 20px !important;
+        flex-direction: column !important; /* Stacks links nicely on phone */
     }
-    .footer-container {
-        justify-content: center;
-        text-align: center;
-    }
-    .footer-links a:hover {
-        transform: none; /* Disable slide on mobile */
+    
+    body footer.aesthetic-footer {
+        padding: 40px 0 !important;
     }
 }
