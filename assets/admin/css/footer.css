@@ -116,7 +116,7 @@
         padding: 40px 20px;
     }
     
-    /* On mobile, break-out can sometimes be tricky, so we ensure full width */
+/* On mobile, break-out can sometimes be tricky, so we ensure full width */
     .scroll-top-action, .footer-base-bar {
         width: 100% !important;
         margin-left: 0 !important;
